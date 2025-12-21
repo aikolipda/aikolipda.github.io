@@ -13,7 +13,7 @@ export default function AboutPage() {
                 <div className="relative h-full overflow-hidden rounded-3xl">
                   <Image
                     src="/images/about/alvi.jpg"
-                    alt="Left top"
+                    alt="Me 1"
                     fill
                     className="object-cover"
                     priority
@@ -23,7 +23,7 @@ export default function AboutPage() {
                 <div className="relative h-full overflow-hidden rounded-3xl">
                   <Image
                     src="/images/about/balletTree.jpg"
-                    alt="Left bottom"
+                    alt="Me 2"
                     fill
                     className="object-cover"
                   />
@@ -35,7 +35,7 @@ export default function AboutPage() {
                 <div className="relative h-full overflow-hidden rounded-3xl">
                   <Image
                     src="/images/about/me1.jpg"
-                    alt="Right top"
+                    alt="Me 3"
                     fill
                     className="object-cover"
                   />
@@ -44,7 +44,7 @@ export default function AboutPage() {
                 <div className="relative row-span-2 h-full overflow-hidden rounded-3xl">
                   <Image
                     src="/images/about/doggie.jpg"
-                    alt="Right tall"
+                    alt="Me 4"
                     fill
                     className="object-cover"
                   />
