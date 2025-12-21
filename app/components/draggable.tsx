@@ -21,7 +21,7 @@ export function DraggableDog({
   const startRef = useRef({ x: 0, y: 0 });
   const startPosRef = useRef({ x: 0, y: 0 });
 
-  const onPointerDown = (e) => {
+  const onPointerDown = (e: any) => {
     draggingRef.current = true;
     e.currentTarget.setPointerCapture(e.pointerId);
 
@@ -29,7 +29,7 @@ export function DraggableDog({
     startPosRef.current = { ...pos };
   };
 
-  const onPointerMove = (e) => {
+  const onPointerMove = (e: any) => {
     if (!draggingRef.current) return;
 
     const dx = e.clientX - startRef.current.x;
