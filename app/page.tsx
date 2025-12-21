@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Button from "./components/button";
 import { Timeline } from "./components/timeline";
-import { DraggableDog } from "./components/draggable";
+import { DraggableDeco } from "./components/draggable";
 
 const featured = [
   {
@@ -91,7 +91,7 @@ export default function Home() {
       <main className="mx-auto flex min-h-screen max-w-5xl flex-col px-6 py-16">
         {/* Intro */}
         <section className="relative my-40 flex flex-1 flex-col items-center justify-center text-center">
-          <DraggableDog
+          <DraggableDeco
             position="-top-30 sm:-top-30 md:-top-40 right-0 md:-right-5"
             size="w-[110px] sm:w-[130px] md:w-[160px]"
             rotation={-12}
@@ -222,7 +222,7 @@ export default function Home() {
           <p className="font-hand text-3xl sm:text-4xl md:text-5xl tracking-[0.12em] text-neutral-800">
             Lipda
           </p>
-          <DraggableDog
+          <DraggableDeco
             position="-bottom-10 sm:-bottom-5 md:-bottom-5 left-0 sm:left-10 md:left-0"
             size="w-[100px] sm:w-[110px] md:w-[170px]"
             rotation={30}

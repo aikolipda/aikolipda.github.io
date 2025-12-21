@@ -10,7 +10,7 @@ type DraggableDogProps = {
   image: string;
 };
 
-export function DraggableDog({
+export function DraggableDeco({
   position,
   size,
   rotation,

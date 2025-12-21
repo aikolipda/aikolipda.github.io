@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import { DraggableDeco } from "../components/draggable";
 
 export default function AboutPage() {
   return (
     <div className="h-screen bg-white dark:bg-black">
       <div className="mx-auto grid h-full max-w-6xl grid-cols-1 md:grid-cols-2 gap-10 px-6 py-16">
-
         <aside className="hidden md:block">
           <div className="sticky top-16 h-[calc(100vh-8rem)] flex items-center justify-center">
             <div className="grid aspect-square w-full max-w-xl grid-cols-2 gap-5">
@@ -55,10 +55,18 @@ export default function AboutPage() {
         </aside>
 
         <main className="h-[calc(100vh-8rem)] overflow-y-auto">
+          <DraggableDeco
+            position="top-15 sm:top-20 md:top-10 right-5 sm:right-20 md:right-15"
+            size="w-[70px] sm:w-[90px] md:w-[110px]"
+            rotation={-12}
+            image="/images/logo/icon.png"
+          />
           <div className="mx-auto flex min-h-full max-w-xl flex-col justify-center">
             <p className="text-lg text-zinc-900 dark:text-zinc-100">
               This is
-              <span className="font-hand text-5xl tracking-[5.76px] ml-3">Lipda</span>
+              <span className="font-hand text-5xl tracking-[5.76px] ml-3">
+                Lipda
+              </span>
             </p>
 
             <div className="mt-6 space-y-6 text-lg leading-relaxed text-zinc-700 dark:text-zinc-300">
