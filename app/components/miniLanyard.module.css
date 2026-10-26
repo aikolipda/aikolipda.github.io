@@ -1,0 +1,48 @@
+.green {
+  --mini-paper: #f4faf3;
+  --mini-border: #c8ddc5;
+  --mini-strap: #b4d5ab;
+  --mini-thread: #d8e9d1;
+  --mini-accent: #55734c;
+  --mini-ink: #2d402b;
+}
+.mint {
+  --mini-paper: #f0faf6;
+  --mini-border: #bfe1d3;
+  --mini-strap: #9fd6c0;
+  --mini-thread: #d0eee0;
+  --mini-accent: #407b65;
+  --mini-ink: #284b3e;
+}
+.red {
+  --mini-paper: #fff5f4;
+  --mini-border: #edc8c5;
+  --mini-strap: #e8ada8;
+  --mini-thread: #f4d3cf;
+  --mini-accent: #985752;
+  --mini-ink: #56332f;
+}
+.yellow {
+  --mini-paper: #fffbed;
+  --mini-border: #e9dcaf;
+  --mini-strap: #e8d48f;
+  --mini-thread: #f5e9bb;
+  --mini-accent: #806b31;
+  --mini-ink: #494027;
+}
+.blue {
+  --mini-paper: #f3f7fd;
+  --mini-border: #c6d6eb;
+  --mini-strap: #abc5e5;
+  --mini-thread: #d6e3f3;
+  --mini-accent: #516e97;
+  --mini-ink: #2f405a;
+}
+.cyan {
+  --mini-paper: #f0fbfd;
+  --mini-border: #bce2eb;
+  --mini-strap: #94d6e5;
+  --mini-thread: #ceeff5;
+  --mini-accent: #347789;
+  --mini-ink: #244b56;
+}

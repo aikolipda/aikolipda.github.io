@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const items = [
-  { href: "/", label: "Home" },
+  { href: "/home", label: "Home" },
   { href: "/projects", label: "Projects" },
   { href: "/about", label: "About" },
   /*{ href: "/contact", label: "Contact" },*/
@@ -11,6 +11,8 @@ const items = [
 
 export default function NavBar() {
   const pathname = usePathname();
+
+  if (pathname === "/" || pathname === "/intro") return null;
 
   return (
     <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[min(48rem,calc(100%-2rem))]">
@@ -28,7 +30,7 @@ export default function NavBar() {
       >
         {items.map(({ href, label }) => {
           const active =
-            href === "/" ? pathname === "/" : pathname.startsWith(href);
+            pathname === href || pathname.startsWith(`${href}/`);
 
           return (
             <Link

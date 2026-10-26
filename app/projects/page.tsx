@@ -14,7 +14,7 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: "Mending Broken Hearts",
+    title: "UNSW Bionic Heart",
     description:
       "Built a mobile app and React website to support patients and clinicians with artificial heart post-implant monitoring and communication.",
     image: "/images/projects/mbh/IMG_9343.jpeg",
@@ -76,7 +76,7 @@ const projects: Project[] = [
 
 export default function ProjectsPage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-black">
+    <div className="min-h-screen bg-dotted-paper">
       <div className="mx-auto max-w-6xl px-6 pt-10 pb-30">
         {/* Grid */}
         <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -108,12 +108,13 @@ export default function ProjectsPage() {
                   {p.title}
                 </h2>
 
-                <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
+                <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
+                  {/**line-clamp-3 */}
                   {p.description}
                 </p>
 
                 {/* Tags */}
-                <Tags tags={p.tags}/>
+                <Tags tags={p.tags} />
 
                 {/* Links */}
                 <div className="mt-6 flex items-center gap-4 text-sm">

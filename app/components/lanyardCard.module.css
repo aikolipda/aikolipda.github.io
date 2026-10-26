@@ -1,0 +1,107 @@
+.stage { --lanyard-scale: 1.15; position: relative; height: 560px; width: 100%; overflow: hidden; flex-shrink: 0; }
+.rig { position: relative; width: calc(100% / var(--lanyard-scale)); height: 470px; margin-inline: auto; transform: scale(var(--lanyard-scale)); transform-origin: 50% 0; }
+@media (min-width: 768px) {
+  .stage { --lanyard-scale: 1.5; height: 720px; }
+}
+.lanyard {
+  position: absolute;
+  inset: 0;
+  transform-origin: 50% 20px;
+}
+.anchor { position: absolute; left: calc(50% - 5px); top: 15px; width: 10px; height: 10px; border-radius: 50%; background: #9d5977; z-index: 2; }
+.strap { position: absolute; left: calc(50% - 8px); top: 20px; width: 16px; height: 105px; transform-origin: 50% 0; border-radius: 4px; background: repeating-linear-gradient(90deg, #f9a8d4 0 2px, #f3c2dc 2px 4px); box-shadow: 1px 2px 3px #0002; }
+.card { position: absolute; top: 0; left: calc(50% - 100px); width: 200px; height: 255px; transform: translateY(125px); transform-origin: 50% 0; border: 0; border-radius: 16px; padding: 0; text-align: left; color: #492c3b; background: transparent; perspective: 900px; cursor: grab; touch-action: none; user-select: none; }
+.card:active { cursor: grabbing; }
+.card:focus-visible { outline: 3px solid #db2777; outline-offset: 5px; }
+.clip { position: absolute; left: calc(50% - 8px); top: -19px; width: 16px; height: 25px; border: 3px solid #a6a4a4; border-radius: 5px; background: linear-gradient(90deg, #a2a0a0, #f2eded, #a2a0a0); }
+.top { display: flex; justify-content: flex-end; align-items: center; font-size: 10px; letter-spacing: 1px; margin: 3px 0 8px; }
+.art { height: 85px; flex-shrink: 0; display: grid; place-items: center; background: #fbcfe8; background-image: radial-gradient(#db277733 1px, transparent 1px); background-size: 10px 10px; color: #9d174d; border-radius: 7px; font-size: 70px; line-height: 1; }
+.name { margin-top: 12px; font-size: 29px; line-height: 1; }
+.role { margin-top: 2px; font-size: 8px; letter-spacing: .4px; }
+.bottom { display: flex; gap: 12px; align-items: center; margin-top: auto; font: 9px/1.4 monospace; }
+.bars { flex: 1; height: 23px; background: repeating-linear-gradient(90deg,#8b5671 0 1px,transparent 1px 3px,#8b5671 3px 5px,transparent 5px 7px); }
+.hint { position: absolute; bottom: 0; width: 100%; text-align: center; font-size: 13px; color: #925573; }
+.keyboard { display: block; font-size: 11px; margin-top: 2px; }
+@media (prefers-color-scheme: dark) { .hint { color: #e9a8c9; } }
+
+.flipper { position: relative; display: block; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform 700ms cubic-bezier(.34,1.35,.45,1); }
+.flipped { transform: rotateY(180deg); }
+.face { position: absolute; inset: 0; box-sizing: border-box; display: flex; flex-direction: column; padding: 18px; border: 1px solid #e9bbcf; border-radius: 16px; background: #fff8fc; box-shadow: 0 18px 25px -13px #42223355; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.back { transform: rotateY(180deg); padding: 12px; }
+.photo { position: relative; display: block; flex: 1; overflow: hidden; border-radius: 9px; }
+.photoImage { object-fit: cover; pointer-events: none; }
+.photoCaption { margin-top: 10px; text-align: center; font-size: 17px; line-height: 1.2; }
+@media (prefers-reduced-motion: reduce) {
+  .flipper { transition: none; }
+}
+
+.stage.collectionStage { --lanyard-scale: 1.4; height: 610px; }
+.collectionStage .lanyard { animation: none; }
+.organization { font-size: 24px; line-height: 1.1; overflow-wrap: anywhere; }
+.experienceRoles { display: flex; flex-direction: column; gap: 10px; margin-block: 14px; font-size: 11px; line-height: 1.4; }
+.dates { display: block; margin-top: 2px; font-size: 9px; color: #925573; }
+.logoHolder { display: grid; place-items: center; padding: 12px; }
+.logoImage { height: 100px; width: auto; max-width: 100%; object-fit: contain; pointer-events: none; }
+
+/* The portrait pass has its own spacing; collection passes keep their compact layout. */
+.stage.mainStage { --lanyard-scale: 1.3; height: 590px; max-width: 540px; margin-inline: auto; isolation: isolate; }
+.mainStage::before { content: ""; position: absolute; inset: 45px 4% 60px; z-index: -1; border-radius: 50%; background: radial-gradient(ellipse, #fbcfe84d, #fbcfe814 55%, transparent 72%); pointer-events: none; }
+.mainStage .face { padding: 16px 18px 18px; box-shadow: 0 20px 32px -18px #683b5355, 0 3px 8px #683b530a; }
+.mainStage .top { font-size: 13px; margin: 0 0 10px; color: #a75c80; }
+.mainStage .art { height: 83px; font-size: 60px; background-color: #f8d7e9; }
+.mainStage .name { margin-top: 13px; font-size: 32px; }
+.mainStage .role { font-size: 7px; letter-spacing: .65px; margin-top: 6px; }
+.mainStage .bottom { padding-top: 10px; gap: 16px; color: #925573; }
+.mainStage .bars { height: 17px; opacity: .7; }
+.mainStage .back { padding: 12px; overflow: hidden; background: #fff8fc; }
+.mainStage .photo {
+  border-radius: 10px;
+  /* A continuous elliptical feather avoids the visible rectangular frame. */
+  -webkit-mask-image: radial-gradient(ellipse closest-side at center, #000 35%, #000000fa 48%, #000000e0 60%, #000000a6 73%, #0000004d 86%, #00000014 95%, transparent 100%);
+  mask-image: radial-gradient(ellipse closest-side at center, #000 35%, #000000fa 48%, #000000e0 60%, #000000a6 73%, #0000004d 86%, #00000014 95%, transparent 100%);
+}
+.mainStage .photoImage { object-position: 88% center; }
+.mainStage .hint { bottom: 12px; font-size: 12px; line-height: 1.7; }
+.mainStage .keyboard { font-size: 10px; opacity: .7; margin-top: 0; }
+@media (min-width: 640px) {
+  .stage.mainStage { --lanyard-scale: 1.6; height: 710px; }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .stage.mainStage { --lanyard-scale: 1.4; height: 630px; }
+}
+@media (min-width: 1024px) {
+  .stage.mainStage { --lanyard-scale: 1.8; height: 800px; }
+}
+
+.flipTarget { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; border-radius: inherit; background: transparent; cursor: inherit; }
+.flipTarget:focus-visible { outline: 3px solid #db2777; outline-offset: 5px; }
+.flipper { pointer-events: none; }
+.contacts { display: flex; gap: 14px; margin-top: 7px; font-size: 8px; color: #925573; }
+.contacts a { pointer-events: auto; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.contacts a:hover { color: #9d174d; }
+.contacts a:focus-visible { outline: 2px solid #db2777; outline-offset: 3px; border-radius: 2px; }
+
+
+/* Organization colors only apply to the miniature passes. */
+.collectionStage .card { color: var(--mini-ink, #492c3b); }
+.collectionStage .anchor { background: var(--mini-accent, #9d5977); }
+.collectionStage .strap { background: repeating-linear-gradient(90deg, var(--mini-strap, #f9a8d4) 0 2px, var(--mini-thread, #f3c2dc) 2px 4px); }
+.collectionStage .face { background: var(--mini-paper, #fff8fc); border-color: var(--mini-border, #e9bbcf); }
+.collectionStage .top, .collectionStage .dates { color: var(--mini-accent, #925573); }
+.collectionStage .bars { background: repeating-linear-gradient(90deg, var(--mini-accent, #8b5671) 0 1px, transparent 1px 3px, var(--mini-accent, #8b5671) 3px 5px, transparent 5px 7px); }
+.collectionStage .flipTarget:focus-visible { outline-color: var(--mini-accent, #db2777); }
+
+/* The rack positions the anchors; cards can travel across neighboring slots. */
+.stage { overflow: visible; pointer-events: none; }
+.card { pointer-events: auto; }
+.stage:focus-within, .stage:has(.rig[data-dragging="true"]) { z-index: 10; }
+
+/* Keep the main pass above page content, including the floating navigation. */
+.stage.mainStage { z-index: 60; }
+.mainStage .card { visibility: hidden; }
+.mainStage .strap { top: 0; left: 50%; width: 1px; height: 1px; border-radius: 0; background: none; box-shadow: none; }
+.ribbon { display: block; overflow: visible; filter: drop-shadow(1px 2px 1px #492c3b18); }
+.ribbon path { fill: none; stroke-linecap: butt; }
+.ribbonEdge { stroke: #d68caf; stroke-width: 14px; }
+.ribbonFabric { stroke: #f3b8d4; stroke-width: 12px; }
+.ribbonWeave { stroke: #ffe2ef; stroke-width: 10px; stroke-dasharray: .6 2.2; opacity: .65; }

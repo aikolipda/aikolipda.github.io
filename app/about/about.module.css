@@ -1,0 +1,19 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  max-width: 1152px;
+  margin-inline: auto;
+  padding: 24px 24px 80px;
+}
+.portrait { position: relative; min-width: 0; z-index: 100; pointer-events: none; }
+.portraitInner { display: flex; justify-content: center; }
+.bio { min-width: 0; padding-inline: 4px; }
+@media (min-width: 768px) {
+  .layout { grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: clamp(24px, 4vw, 64px); align-items: start; padding-block: 64px 96px; }
+  .portrait { position: sticky; top: 32px; }
+  .bio { padding-top: 64px; }
+}
+@media (min-width: 1024px) {
+  .bio { padding-top: 88px; }
+}
